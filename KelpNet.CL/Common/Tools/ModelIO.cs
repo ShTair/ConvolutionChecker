@@ -7,7 +7,7 @@ namespace KelpNet.CL
 {
     public class ModelIO
     {
-        public static Type[] KnownTypes = 
+        public static Type[] KnownTypes =
         {
             typeof(Real),
             typeof(NdArray),
@@ -66,7 +66,7 @@ namespace KelpNet.CL
 
         public static void Save(Function function, string fileName)
         {
-            DataContractSerializer bf = new DataContractSerializer(typeof(Function), KnownTypes);
+            DataContractSerializer bf = CreateSerializer();
 
             //ZIP書庫を作成
             if (File.Exists(fileName))
@@ -86,7 +86,7 @@ namespace KelpNet.CL
 
         public static Function Load(string fileName)
         {
-            DataContractSerializer bf = new DataContractSerializer(typeof(Function), KnownTypes);
+            DataContractSerializer bf = CreateSerializer();
 
             ZipArchiveEntry zipData = ZipFile.OpenRead(fileName).GetEntry("Function");
             Function result = (Function)bf.ReadObject(zipData.Open());
@@ -104,6 +104,15 @@ namespace KelpNet.CL
             }
 
             return result;
+        }
+
+        private static DataContractSerializer CreateSerializer()
+        {
+            return new DataContractSerializer(typeof(Function), new DataContractSerializerSettings
+            {
+                KnownTypes = KnownTypes,
+                PreserveObjectReferences = true,
+            });
         }
 
         static void InitFunctionStack(FunctionStack functionStack)
