@@ -12,7 +12,6 @@ namespace KelpNet
 
         public NdArray[] Parameters { get; set; }
 
-        [field: NonSerialized]
         public Optimizer[] Optimizers { get; set; }
 
         [field: NonSerialized]
