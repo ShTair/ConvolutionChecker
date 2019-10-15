@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvolutionChecker", "ConvolutionChecker\ConvolutionChecker.csproj", "{A7640A6D-0438-4513-A555-5D97EB2BD75F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BD1A668-41E1-4637-B7A3-DF213D0CC710}
+	EndGlobalSection
+EndGlobal
