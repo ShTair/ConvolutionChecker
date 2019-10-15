@@ -1,0 +1,38 @@
+branches:
+  only:
+    - master
+
+skip_tags: true
+
+image: Visual Studio 2017
+
+environment:
+  global:
+    OPENCL_DOWNLOAD_URL: "http://registrationcenter-download.intel.com/akdlm/irc_nas/12512/opencl_runtime_16.1.2_x64_setup.msi"
+    OPENCL_INSTALLER_PATH: C:\Users\appveyor\Downloads\opencl_runtime_16.1.2_x64_setup.msi
+
+cache:
+  - C:\Users\appveyor\Downloads
+
+configuration: Release
+
+before_build:
+  - nuget restore KelpNet.sln
+
+build: 
+  parallel: true
+  project: KelpNet.sln
+  verbosity: normal
+
+before_test:
+  - IF NOT EXIST %OPENCL_INSTALLER_PATH% ( appveyor DownloadFile %OPENCL_DOWNLOAD_URL% -FileName %OPENCL_INSTALLER_PATH% )
+  - IF EXIST %OPENCL_INSTALLER_PATH% ( start /wait msiexec /i %OPENCL_INSTALLER_PATH% /qn  /l*v clruntime.log )
+  - "SET PATH=C:\\Python37-x64;C:\\Python37-x64\\Scripts;%PATH%"
+  - pip install chainer
+
+test_script:
+  - .\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -filter:"+[KelpNet*]* -[KelpNet.Tests*]*" -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" -targetargs:"KelpNet.Tests.dll /platform:x64" -targetdir:".\KelpNet.Tests\bin\Release" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:Cover_result.xml
+    
+after_test:
+  - pip install codecov
+  - codecov -f "Cover_result.xml"
