@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvolutionChecker", "ConvolutionChecker\ConvolutionChecker.csproj", "{A7640A6D-0438-4513-A555-5D97EB2BD75F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KelpNet", "KelpNet\KelpNet.csproj", "{750BB541-BF90-471D-A93F-54230B6FB07D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KelpNet.CL", "KelpNet.CL\KelpNet.CL.csproj", "{BCADEF3A-A9BB-464F-972D-886581995BF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7640A6D-0438-4513-A555-5D97EB2BD75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750BB541-BF90-471D-A93F-54230B6FB07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750BB541-BF90-471D-A93F-54230B6FB07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750BB541-BF90-471D-A93F-54230B6FB07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750BB541-BF90-471D-A93F-54230B6FB07D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCADEF3A-A9BB-464F-972D-886581995BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCADEF3A-A9BB-464F-972D-886581995BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCADEF3A-A9BB-464F-972D-886581995BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCADEF3A-A9BB-464F-972D-886581995BF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
